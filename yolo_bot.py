@@ -47,7 +47,7 @@ class YoloBot(object):
 
         for search, options in self.regexs.iteritems():
             if re.search(search, message, flags=re.I):
-                self.yolo_cast(conversation, options,
+                self.yolo_cast(conversation, search, options,
                         throttle=lambda: search in self.throttle)
 
     def yolo_cast(self, conv_id, search, options, throttle=False):
