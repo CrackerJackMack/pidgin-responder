@@ -52,7 +52,7 @@ class YoloBot(object):
 
     def yolo_cast(self, conv_id, search, options, throttle=False):
         now = time.time()
-        if throttle and (now - self.last_yolo.get(search, 0)) < self.timer:
+        if throttle and (now - self.last_yolo.get(search, 0)) >= self.timer:
             # Maybe...
             if random.choice([True, False]):
                 return
